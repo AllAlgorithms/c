@@ -5,14 +5,6 @@
 
 #include <stdio.h>
 
-// Swap elements
-void swap(int *x, int *y)
-{
-	int temp = *x;
-	*x = *y;
-  *y = temp;
-}
-
 // Implement insertion sort
 void insertionSort(int arr[], int n)
 {
@@ -51,7 +43,9 @@ int main()
 
 	printf("Unsorted array: \n");
 	printArray(arr, n);
+
   insertionSort(arr, n);
+
   printf("Sorted array: \n");
   printArray(arr, n);
   return 0;
