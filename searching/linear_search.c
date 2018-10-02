@@ -45,7 +45,7 @@ int main() {
     result1 = linearSearch(arr, n, key1);
     printResult(key1, result1);
 
-    // Key is not preset in the array
+    // Key is not present in the array
     result2 = linearSearch(arr, n, key2);
     printResult(key2, result2);
 
