@@ -29,6 +29,7 @@
 - [Data Structures](data-structures)
 - [Dynamic Programming](dynamic-programming)
 - [Hashes](hashes)
+- [Operating System](operating_system)
 - [Searches](searches)
 - [Sorting](sorting)
 - [Strings](strings)
