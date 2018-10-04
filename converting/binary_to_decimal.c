@@ -1,7 +1,5 @@
 // Author: Murilo Ferreira
 
-#include <stdio.h>
-
 int binaryToDecimal(int binary) {
     int decimal = 0;
     int multiplier = 1;
@@ -13,11 +11,3 @@ int binaryToDecimal(int binary) {
     return decimal;
 }
 
-int main() {
-    int bin;
-    printf("Enter your binary number: ");
-    scanf("%d" ,&bin);
-    int dec = binaryToDecimal(bin);
-    printf("The number is: %d \n" ,dec);
-    return 0;
-}
