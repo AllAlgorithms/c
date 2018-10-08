@@ -3,8 +3,8 @@
 * Queue : An attempt to implementing a generic data type queue in C
 */
 
-#ifndef STACK_H
-#define STACK_H
+#ifndef QUEUE_H
+#define QUEUE_H
 
 #include <stdio.h>
 
