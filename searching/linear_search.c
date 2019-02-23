@@ -1,53 +1,30 @@
-// C implementation of linear search
-//
-// Author: Shriharsha KL
-
 #include <stdio.h>
-
-// Implement linear search
-int linearSearch(int arr[], int size, int key) {
-	for (int i = 0; i < size; ++i) {
-        if (arr[i] == key) {
-            return i;
-        }
+ 
+int main()
+{
+  int array[100], search, c, n;
+ 
+  printf("Enter the number of elements in array\n"); //Enter the number of array elements
+  scanf("%d", &n);
+ 
+  printf("Enter %d integer(s)\n", n);
+ 
+  for (c = 0; c < n; c++)
+    scanf("%d", &array[c]); //Enter each of the elements in the array
+ 
+  printf("Enter a number to search\n");
+  scanf("%d", &search); //Enter the element to be searched
+ 
+  for (c = 0; c < n; c++)
+  {
+    if (array[c] == search)    /* If required element is found */
+    {
+      printf("%d is present at location %d.\n", search, c+1);
+      break;
     }
-
-    return -1;
-}
-
-// Function to print elements
-void printArray(int arr[], int size) {
-	for (int i = 0; i < size; i++)
-        printf("%d ", arr[i]);
-	printf("\n");
-}
-
-// Function to print the result of linear search
-void printResult(key, result) {
-    if (result == -1) {
-        printf("Search Key %d was not found\n\n", key);
-    } else {
-        printf("Search Key %d was found at position %d\n\n", key, result);
-    }
-}
-
-// test
-int main() {
-    int arr[] = { 46, 24, 33, 10, 2, 81, 50 };
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int key1 = 81, result1;
-    int key2 = 100, result2;
-
-	printf("Target array: \n\n");
-	printArray(arr, n);
-
-    // Key is present in the array
-    result1 = linearSearch(arr, n, key1);
-    printResult(key1, result1);
-
-    // Key is not present in the array
-    result2 = linearSearch(arr, n, key2);
-    printResult(key2, result2);
-
-    return 0;
+  }
+  if (c == n)
+    printf("%d isn't present in the array.\n", search);
+ 
+  return 0;
 }
