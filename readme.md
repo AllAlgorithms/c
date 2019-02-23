@@ -66,8 +66,8 @@ You can find the All ▲lgorithms categories at [algorithms.com/categories](http
 
 ## Data structures
 
- - [Binary search-tree](data-structures/binary_search-tree.c)
- - [Linked list-operations](data-structures/linked_list-operations.c)
+ - [Binary search tree](data-structures/binary_search_tree.c)
+ - [Linked list operations](data-structures/linked_list_operations.c)
  - [Queue](data-structures/queue.c)
  - [Stack](data-structures/stack.c)
  - [Vector](data-structures/vector.c)
@@ -81,9 +81,9 @@ You can find the All ▲lgorithms categories at [algorithms.com/categories](http
  - [Factorial](math/factorial/factorial.c)
  - [Recursive factorial](math/factorial/recursive_factorial.c)
  - [Fibonacci](math/fibonacci.c)
- - [Greatest common-divisor](math/greatest-common-divisor/greatest_common-divisor.c)
+ - [Greatest common divisor](math/greatest-common-divisor/greatest_common_divisor.c)
  - [Is prime](math/is-prime/is_prime.c)
- - [Least common-multiple](math/least-common-multiple/least_common-multiple.c)
+ - [Least common multiple](math/least-common-multiple/least_common_multiple.c)
  - [Matrix](math/matrix-multiply-with-2d/matrix.c)
 
 ## Searching
