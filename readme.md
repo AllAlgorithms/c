@@ -50,7 +50,7 @@ You can find the All ▲lgorithms categories at [algorithms.com/categories](http
  - [Numerical analysis](#numerical-analysis)
  - [Online challenges](#online-challenges)
  - [Randomized algorithms](#randomized-algorithms)
- - [Serches](#serches)
+ - [Searches](#searches)
  - [Selections](#selections)
  - [Sorting](#sorting)
  - [Strings](#strings)
