@@ -1,6 +1,10 @@
-//
-// Created by NWT743 on 25/07/2019.
-//
+/*
+ ============================================================================
+ Name        : TCP_receiver.h
+ Author      : GodisC00L
+ Description : Simple TCP sender. Expected input {IP address, port, number of parts, file name}
+ ============================================================================
+ */
 
 #ifndef C_1_TCP_RECEIVER_H
 #define C_1_TCP_RECEIVER_H

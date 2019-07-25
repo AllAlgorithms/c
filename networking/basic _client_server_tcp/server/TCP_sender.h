@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : TCP_Sender.c
+ Name        : TCP_Sender.h
  Author      : GodisC00L
  Description : Simple TCP sender. Expected input {IP address, port, number of parts, file name}
  ============================================================================

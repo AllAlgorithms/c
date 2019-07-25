@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : TCP_Sender.c
+ Name        : TCP_receiver.c
  Author      : GodisC00L
  Description : Simple TCP receiver. Expected input {server IP address, port}.
  ============================================================================
