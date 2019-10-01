@@ -2,10 +2,12 @@
 
 #include <stdio.h>
 
-int binaryToDecimal(int binary) {
+int binaryToDecimal(int binary)
+{
     int decimal = 0;
     int multiplier = 1;
-    while (binary != 0) {
+    while (binary != 0)
+    {
         decimal += (binary % 10)* multiplier;
         binary /= 10;
         multiplier *= 2;
@@ -13,9 +15,10 @@ int binaryToDecimal(int binary) {
     return decimal;
 }
 
-int main() {
+int main()
+{
     int bin;
-    printf("Enter your binary number: ");
+    printf("Enter the binary number: ");
     scanf("%d" ,&bin);
     int dec = binaryToDecimal(bin);
     printf("The number is: %d \n" ,dec);
