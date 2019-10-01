@@ -18,7 +18,7 @@ int is_prime(unsigned long x) {
             }
 
             // Test odd numbers from 3 up to the square root of x
-            for (i = 3; (i * i) <= x; i += 2) {
+            for (i = 3; (i * i) <= x; i =i+2) {
                 if(0 == (x % i)) {
                     return 0;
                 }
