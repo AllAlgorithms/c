@@ -27,7 +27,7 @@ int main()
     int least_common_multiple = 0;
 
     while (1) {
-        printf("Provide two integers: \n");
+        printf("give two integers: \n");
         scanf("%d %d", &a, &b);
 
         if (-1 == (least_common_multiple = get_least_common_multiple(a, b))) {
@@ -35,7 +35,7 @@ int main()
             continue;
         }
 
-        printf("The least common multiple of %d and %d is %d\n", a, b, least_common_multiple);
+        printf(" least common multiple of %d and %d is %d\n", a, b, least_common_multiple);
     }
 
     return 0;
