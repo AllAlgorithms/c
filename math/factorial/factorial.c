@@ -9,11 +9,11 @@
 int main()
 {
 	int i,f, product=0, factorial=1;
-	printf("Enter the number for which you want to find factorial : ");
+	printf("Enter the number to find factorial : ");
 	scanf("%d",&f);
 	
 	if(f<0)
-	 printf("Number has no factorial\n");
+	 printf("Number has zero factorial\n");
 	 
 	 else 
 
