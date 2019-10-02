@@ -1,0 +1,95 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int info;
+    struct node *next;
+};
+int main()
+{
+    int ch,n,i,b;
+    struct node *start=NULL;
+    printf("Enter the size of nodes=");
+    scanf("%d",&n);
+    struct node* t;
+    struct node* a;
+    struct node* t1;
+    start=(struct node*)malloc(sizeof(struct node));
+    printf("Enter the value of node 1=");
+    scanf("%d",&start->info);
+    start->next=NULL;
+    t=start;
+    t1=start;
+    for(i=2;i<=n;i++)
+    {
+       a=(struct node*)malloc(sizeof(struct node));
+       printf("Enter the value of node %d=",i);
+       scanf("%d",&a->info);
+       a->next=NULL;
+       t->next=a;
+       t=t->next;
+    }
+    printf("Enter 1) To Insert at beginning\n      2) To insert at specified location\n      3) To Insert at the end\n");
+    printf("Enter your choice=");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+    case 1:
+        {
+            a=(struct node*)malloc(sizeof(struct node));
+            printf("Enter the value=");
+        scanf("%d",&a->info);
+        a->next=start;
+        start=a;
+        t=start;
+        while(t!=NULL)
+        {
+            printf("%d\n",t->info);
+            t=t->next;
+        }
+        break;
+        }
+    case 2:
+        {
+            printf("Enter the position you want to input=");
+            scanf("%d",&b);
+            t=start;
+            for(i=1;i<b-1;i++)
+            {
+                t=t->next;
+            }
+            a=(struct node*)malloc(sizeof(struct node));
+            printf("Enter the value=");
+            scanf("%d",&a->info);
+            a->next=t->next;
+            t->next=a;
+            t=start;
+            while(t!=NULL)
+            {
+                printf("%d\n",t->info);
+                t=t->next;
+            }
+        break;
+        }
+    case 3:
+        {
+            a=(struct node*)malloc(sizeof(struct node));
+            printf("Enter the value=");
+            scanf("%d",&a->info);
+            t=start;
+            for(i=1;i<n;i++)
+            {
+                t=t->next;
+            }
+            t->next=a;
+            a->next=NULL;
+            t=start;
+            while(t!=NULL)
+            {
+                printf("%d\n",t->info);
+                t=t->next;
+            }
+        }
+    }
+    return 0;
+}
