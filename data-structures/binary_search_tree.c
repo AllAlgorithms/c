@@ -28,7 +28,7 @@ void insert(struct tree *q, int x)
     else
     {
         struct tnode *l = q->root;
-        while (l != NULL)
+        while (l)
         {
             prev = l;
             if (p->data < l->data)
