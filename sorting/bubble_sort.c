@@ -4,6 +4,7 @@
 
 
 #include <stdio.h>
+#include <stdbool.h>  //for bool
 
 // Swap elements
 void swap(int *x, int *y)
@@ -14,14 +15,22 @@ void swap(int *x, int *y)
 }
 
 // Implement bubble sort
-void bubbleSort(int arr[], int n)
+void bubbleSort(int a[], int n)
 {
-	int i, j;
-	for (i = 0; i < n-1; i++)
-	// last i elements are already in place
-		for (j = 0; j < n-i-1; j++)
-			if (arr[j] > arr[j+1])
-				swap(&arr[j], &arr[j+1]);
+  int i,j;
+  bool swapped;
+  for(i = 0; i < n - 1; i++) {
+    swapped = false;
+    for(j = 0; j < n - i - 1; j++) {
+      if(a[j] > a[j + 1]) {
+        swap(&a[j], &a[j + 1]);
+        swapped = true;
+      }
+    }
+    if (!swapped) {
+      break;
+    }
+  }
 }
 
 // Function to print elements
