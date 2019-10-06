@@ -10,7 +10,7 @@ return fibonacci(n-1) + fibonacci(n-2);
 
 int main () 
 { 
-  int n = 10; 
+  int n = 100; 
   printf("Fibonacci number of %d : %d", n, fibonacci(n)); 
   return 0; 
 }
