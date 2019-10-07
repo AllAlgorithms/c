@@ -20,4 +20,8 @@ bool sameSet(UnionFind* uf, int a, int b);
 
 int getRoot(UnionFind* uf, int i);
 
+void merge(UnionFind* uf, int a, int b);
+
+void printUnionFind(UnionFind* uf);
+
 #endif // UNION_FIND
