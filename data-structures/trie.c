@@ -22,7 +22,7 @@ struct Trie* getNewTrieNode()
 {
 	struct Trie* node = (struct Trie*)malloc(sizeof(struct Trie));
 	node->isLeaf = 0;
-
+	//for loop for add leaf
 	for (int i = 0; i < CHAR_SIZE; i++)
 		node->character[i] = NULL;
 
