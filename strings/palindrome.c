@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include <stdio.h>// header files//
  
-int main()
+int main() // main function//
 {
   char text[100];
   int begin, middle, end, length = 0;
@@ -27,3 +27,4 @@ int main()
  
   return 0;
 }
+// program ends//
