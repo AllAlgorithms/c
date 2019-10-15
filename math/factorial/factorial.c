@@ -12,18 +12,15 @@ int main()
 	printf("Enter the number to find factorial : ");
 	scanf("%d",&f);
 	
-	if(f<0)
-	 printf("Number has zero factorial\n");
-	 
-	 else 
-
-	{	for(i=1; i<=f; i++)
-	
+	if(f < 0) printf("Number has zero factorial\n");
+	else if(f == 0) printf("1\n");
+	else 
+	{	
+        for(i=1; i<=f; i++)
 		{
-                        factorial=factorial*i;
-                }
-                printf("Factorial : %d\n" ,factorial);
-
+            factorial=factorial*i;
+        }
+     printf("Factorial : %d\n" ,factorial);  
 	}
 }
 
