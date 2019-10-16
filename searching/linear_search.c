@@ -7,7 +7,7 @@ int main()
   printf("Enter the number of elements in array\n"); //Enter the number of array elements
   scanf("%d", &n);
  
-  printf("Enter %d integer(s)\n", n);
+  printf("Enter %d integer(s)\n", n);//taking input from the user
  
   for (c = 0; c < n; c++)
     scanf("%d", &array[c]); //Enter each of the elements in the array
