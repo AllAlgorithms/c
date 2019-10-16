@@ -46,6 +46,12 @@ void push(Stack* mystack, void* data) {
     }
 }
 
+void display(Stack* mystack) {
+    for (int i = mystack -> top  ; i >= 0 ; i--) {
+        printf("%s ", *(char**)(mystack->data + i));
+    }
+}
+
 void* pop(Stack* mystack) {
     if (mystack -> top < 0) {
         printf("\n*Stack Underflow detected !*\n");
@@ -59,12 +65,6 @@ void* pop(Stack* mystack) {
     return (mystack -> data)[(mystack -> top)+1];
 }
 
-void display(Stack* mystack) {
-    for (int i = mystack -> top  ; i >= 0 ; i--) {
-        printf("%s ", *(char**)(mystack->data + i));
-    }
-}
-
 void* peek(Stack* mystack) {
     return (mystack -> data)[mystack -> top];
 }
@@ -72,6 +72,5 @@ void* peek(Stack* mystack) {
 bool isEmpty(Stack* mystack) {
     if (mystack -> top < 0)
         return true;
-
     return false;
 }
