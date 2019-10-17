@@ -8,23 +8,26 @@
 #include<stdio.h>
 int main()
 {
-	int i,f, product=0, factorial=1;
+    int i,f, factorial=1;
 	printf("Enter the number to find factorial : ");
 	scanf("%d",&f);
-	
+
 	if(f<0)
-	 printf("Number has zero factorial\n");
-	 
-	 else 
+        printf("Number has complex factorial\n");
 
-	{	for(i=1; i<=f; i++)
-	
-		{
-                        factorial=factorial*i;
-                }
-                printf("Factorial : %d\n" ,factorial);
+    else if (f==0 || f==1)
+        printf("Factorial : 1");
 
-	}
+    else
+
+	{
+        for(i=2; i<=f; i++)
+        {
+            factorial=factorial*i;
+         }
+            printf("Factorial : %d\n" ,factorial);
+
+	 } return 0;
 }
 
 
