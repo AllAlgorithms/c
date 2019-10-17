@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<conio.h>
 #include <stdlib.h>
 struct llnode {
     int data;
@@ -150,4 +151,5 @@ void main() {
             exit(0);
         }
     }
+    getch()
 }
