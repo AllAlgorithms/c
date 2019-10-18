@@ -1,3 +1,9 @@
+/* 
+ * @Author: Rohit Agarwal(agarwalr98)
+ * @Email: agarwal.r1998@gmail.com
+ *
+ * prime factors of a number 
+ */
 # include <stdio.h> 
 # include <math.h> 
   
