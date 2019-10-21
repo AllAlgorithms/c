@@ -23,7 +23,7 @@ int main()
       break;
     }
   }
-  if (c == n)
+  if (c > n)//changed comparesion to greater than
     printf("%d isn't present in the array.\n", search);
  
   return 0;
