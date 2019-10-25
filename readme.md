@@ -15,7 +15,7 @@
 <img src="https://cdn.abranhe.com/projects/algorithms/algorithms.svg" width="400px">
 <br>
 <br>
-<p>All ▲lgorithms implemented in C</p>
+<p>All Algorithms implemented in C</p>
 <a href="https://allalgorithms.com"><img src="https://cdn.abranhe.com/projects/algorithms/badge.svg"></a>
 <a href="https://github.com/abranhe/algorithms/blob/master/license"><img src="https://img.shields.io/github/license/abranhe/algorithms.svg" /></a>
 <a href="https://cash.me/$abranhe"><img src="https://cdn.abranhe.com/badges/cash-me.svg"></a>
@@ -31,7 +31,7 @@
 
 ## Contents
 
-You can find the All ▲lgorithms categories at [algorithms.com/categories](https://algorithms.com/categories)
+You can find the All Algorithms categories at [algorithms.com/categories](https://algorithms.com/categories)
 
  - [Artificial intelligence](#artificial-intelligence)
  - [Backtracking](#backtracking)
