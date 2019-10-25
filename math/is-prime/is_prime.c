@@ -1,45 +1,20 @@
-#include <stdio.h>
-
-// Returns 1 if the given number is prime, 0 otherwise 
-int is_prime(unsigned long x) {
-    switch (x) {
-        case 0:
-        case 1:
-            return 0;
-
-        case 2:
-            return 1;
-
-        default: {
-            unsigned int i = 0;
-            // Multiples of 2 are not prime
-            if (0 == (x % 2)) {
-                return 0;
-            }
-
-            // Test odd numbers from 3 up to the square root of x
-            for (i = 3; (i * i) <= x; i += 2) {
-                if(0 == (x % i)) {
-                    return 0;
-                }
-            }
-
-            return 1;
-        }
-    }
-}
-
+#include<stdio.h>
 int main()
 {
-    unsigned long x = 0;
+    int x,i;
 
-    while (1) {
-        printf("Provide an integer: \n");
-        scanf("%lu", &x);
+    printf("Enter the number");
 
-        printf("%lu is%s prime\n", x, is_prime(x) ? "" : " not");
+    scanf("%d",&x);
 
-    }
+    for(i=2;i<=x-1;i++)
+        
+        if(x%i==0)
+            break;
+        if(i==x) //that means i value becme eqaul to x thus prime no bcoz every no is divided by itself
+            printf("%d is a prime number",x);
+        else
+            printf("%d is not a prime number",x);
+        return 0;
 
-    return 0;
 }
