@@ -30,7 +30,7 @@ int binarySearch(int arr[], int l, int r, int x)
    return -1; 
 } 
   
-int main(void) 
+int main(void) //take nothing return something
 { 
    int arr[] = {}; //Enter array of elements
    int n = sizeof(arr)/ sizeof(arr[0]); 
