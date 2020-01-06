@@ -75,6 +75,7 @@ You can find the All ▲lgorithms categories at [algorithms.com/categories](http
 ## Dynamic programming
 
  - [Dijkstras algorithem](dynamic-programming/dijkstras_algorithem.c)
+ - [Huffman Encoding](dynamic-programming/HuffmanEncoding.c)
 
 ## Math
 
