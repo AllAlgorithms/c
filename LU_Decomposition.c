@@ -162,8 +162,8 @@ void SolveLU(double L[SIZE][SIZE],double U[SIZE][SIZE],double b[SIZE],double x[S
 
 
 int main()
-{	int A={0};			//Assign A and b values assuming the form Ax=b                     
-	int b={0};
+{	double A[SIZE][SIZE]={0};			//Assign A and b values assuming the form Ax=b                     
+	double b[SIZE]={0};
 	PrintMatrix(A);
 	double L[SIZE][SIZE]={0};
 	double U[SIZE][SIZE]={0};
