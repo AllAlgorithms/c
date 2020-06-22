@@ -5,29 +5,22 @@
  * Factorial Code for :https://github.com/AllAlgorithms/algorithms/tree/master/math/factorial
  */
 
-#include<stdio.h>
+#include <stdio.h>
+long int multiplyNumbers(int n);
 int main()
 {
-    int i,f, factorial=1;
-	printf("Enter the number to find factorial : ");
-	scanf("%d",&f);
-
-	if(f<0)
-        printf("Number has complex factorial\n");
-
-    else if (f==0 || f==1)
-        printf("Factorial : 1");
-
+    int n;
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+    printf("Factorial of %d = %ld", n, multiplyNumbers(n));
+    return 0;
+}
+long int multiplyNumbers(int n)
+{
+    if (n >= 1)
+        return n*multiplyNumbers(n-1);
     else
-
-	{
-        for(i=2; i<=f; i++)
-        {
-            factorial=factorial*i;
-         }
-            printf("Factorial : %d\n" ,factorial);
-
-	 } return 0;
+        return 1;
 }
 
 
