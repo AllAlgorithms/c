@@ -1,3 +1,7 @@
+/* A String is Palindromic if it reads the same forward and backwards
+   e.g. racecar
+*/
+
 #include <stdio.h>
  
 int main()
