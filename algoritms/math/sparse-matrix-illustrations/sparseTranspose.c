@@ -1,4 +1,16 @@
-#include<stdio.h>
+//
+// Sparse Matrix Transpose illustration
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Nikhil George Mathew
+// Github: @Nikcodes10
+//
+
+#include<cstdio>
 
 void transpose(int A[][3], int B[][3]) {
 

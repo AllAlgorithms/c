@@ -1,4 +1,16 @@
-#include<stdio.h>
+//
+// Sparse Matrix Sum illustration
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Nikhil George Mathew
+// Github: @Nikcodes10
+//
+
+#include<cstdio>
 
 void sum(int tupleA[][3], int tupleB[][3], int tupleC[][3]) {
 	
