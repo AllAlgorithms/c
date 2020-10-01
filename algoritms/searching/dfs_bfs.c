@@ -1,3 +1,5 @@
+// dfs_bfs.c
+// Depth First Search and Breadth First Search
 #include<stdio.h>
 #include<malloc.h>
 #define n 10
