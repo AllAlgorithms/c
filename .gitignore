@@ -1,7 +1,5 @@
-DS_Store
+.DS_Store
 *.o
-
-/scripts/node_modules
-/scripts/yarn.lock
-/scripts/package-lock.json
-.vscode/
+*.exe
+scripts
+.vscode
