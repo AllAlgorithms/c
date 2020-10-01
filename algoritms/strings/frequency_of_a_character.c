@@ -1,5 +1,5 @@
 #include <stdio.h>
-void main()
+int main()
 {
    char str[100], ch;
    int i, frequency = 0;
@@ -9,7 +9,7 @@ void main()
    scanf("%c",&ch);
    for(i = 0; str[i] != '\0'; ++i)
    {
-       if(ch == str[i])
+       if(ch == str[i] || ch-32 == str[i] || ch+32 ==str[i])
            ++frequency;
    }
    printf("Frequency of %c = %d", ch, frequency);
