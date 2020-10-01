@@ -3,7 +3,7 @@
  * 
  * The All ▲lgorithms validator CLI
  * 
- * Author: Carlos Abraham Hernandez
+ * Author: Carlos Abraham Hernandez.
  * https://abranhe.com (abraham@abranhe.com)
  */
 'use strict';
@@ -24,7 +24,7 @@ getFiles('../', (err, res) => {
   } else {
     let invalid = false;
     res.map((file) => {
-      // Accept only valid C++ Files (.cpp,.hpp,.h)
+      // Accept only valid C++ Files (.cpp,.hpp,.h,c++)
       if (path.extname(file) !== '.c' && path.extname(file) !== '.hpp' && path.extname(file) !== '.h') {
         return;
       }
@@ -37,7 +37,7 @@ getFiles('../', (err, res) => {
       }
     });
     if (invalid) {
-      // Throw an error at the end of checking all files
+      // Throw an error at the end of checking all files.
       throw new TypeError(`Expected the All ▲lgorithms structure.`);
     }
   }
