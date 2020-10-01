@@ -14,13 +14,14 @@ int isEmpty()
 }
 void enQueue(int element)
 {
-    if(isFull()) printf("\n Queue is full\n");
+    if(isFull()) 
+       printf("\n Queue is full\n");
     else
     {
         if(front == -1) front = 0;
         rear = (rear + 1) % SIZE;
         items[rear] = element;
-        printf("\n Inserted >> %d", element);
+        printf("\n Inserted: %d", element);
     }
 }
 int deQueue()
@@ -39,7 +40,7 @@ int deQueue()
             front = (front + 1) % SIZE;
             
         }
-        printf("\n Deleted element >> %d \n", element);
+        printf("\n Deleted element: %d \n", element);
         return(element);
     }
 }
