@@ -1,5 +1,4 @@
 // C implementation of bubble sort
-//
 // Author: Carlos Abraham Hernandez
 
 
@@ -33,7 +32,7 @@ void printArray(int arr[], int size)
 	printf("\n");
 }
 
-// test
+// Driver Code
 int main()
 {
   int arr[] = {46, 24, 33, 10, 2, 81, 50};
