@@ -148,7 +148,7 @@ printf("\n 1=create edge \n 2= delete edge \n 3= bfs \n 4=dfs \n enter choice \n
 scanf("%d", &opt);
 switch(opt){
     case 1:
-    printf("\N Enter two numbers to create edge");
+    printf("\n Enter two numbers to create edge");
 scanf("%d %d",&i,&j);
 addedge(i,j);
 break;
