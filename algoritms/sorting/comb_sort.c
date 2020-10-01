@@ -1,4 +1,17 @@
-#include <stdio.h>
+//
+// Comb sort works to sort an array.
+// More documentation about the algorithm
+//
+// The All ▲lgorithms Project
+//
+// https://allalgorithms.com/
+// https://github.com/allalgorithms/cpp
+//
+// Contributed by: Ujwal Kandi
+// Github: @UjwalKandi
+//
+
+#include <cstdio>
 #include <stdlib.h>
  
 /*Function to find the new gap between the elements*/
