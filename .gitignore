@@ -1,5 +1,8 @@
+.vscode/
 .DS_Store
 *.o
 *.exe
-scripts
-.vscode
+*.lock
+*.log
+/scripts/node_modules
+/scripts/package-lock.json
