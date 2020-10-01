@@ -13,13 +13,13 @@ int main()
     for(int i=0;i<n;i++)
     {
         char ch='A';
-        for(int j=1;j<=n-i;j++)
+        for(int j=1;j<=n-i;j++)   // Write Later in accinding order ex: ABCDE... 
         {
             printf("%c",ch);
             ch=ch+1;
         }
         ch=ch-1;
-        for(int j=1;j<=n-i;j++)
+        for(int j=1;j<=n-i;j++)  // Write Later in decanding order ex: ...EDCBA 
         {
             printf("%c",ch);
             ch=ch-1;
