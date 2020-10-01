@@ -32,7 +32,7 @@ int binarySearch(int arr[], int l, int r, int x)
   
 int main(void) //take nothing return something
 { 
-   int n;
+    int n;
     printf("Enter the number of elements in array\n"); //Enter the number of array elements
     scanf("%d", &n);   
     int arr[n];
