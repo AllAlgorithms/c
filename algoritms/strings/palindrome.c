@@ -6,28 +6,23 @@
  
 int main()
 {
-  char text[100];
-  int begin, middle, end, length = 0;
- 
-  gets(text);
- 
-  while (text[length] != '\0')
-    length++;
- 
-  end = length - 1;
-  middle = length/2;
- 
-  for (begin = 0; begin < middle; begin++)
-  {
-    if (text[begin] != text[end])
-    {
-      printf("Not a palindrome.\n");
-      break;
+    int n, reversedN = 0, remainder, originalN;
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+    originalN = n;
+
+    // reversed integer is stored in reversedN
+    while (n != 0) {
+        remainder = n % 10;
+        reversedN = reversedN * 10 + remainder;
+        n /= 10;
     }
-    end--;
-  }
-  if (begin == middle)
-    printf("Palindrome.\n");
- 
-  return 0;
+
+    // palindrome if orignalN and reversedN are equal
+    if (originalN == reversedN)
+        printf("%d is a palindrome.", originalN);
+    else
+        printf("%d is not a palindrome.", originalN);
+
+    return 0;
 }
