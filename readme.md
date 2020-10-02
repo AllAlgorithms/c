@@ -1,4 +1,4 @@
-We are accepting all pull requests. [Read More](https://github.com/AllAlgorithms/algorithms/issues/40)
+We are happy to announce that we are accepting all pull requests. [Read More](https://github.com/AllAlgorithms/algorithms/issues/40)
 
 <div align="center" id="top">
 	<br>
@@ -210,6 +210,7 @@ just a paper and pencil.
 
 ## [Data Structures](data-structures)
 
+- [Array](data-structures/array/)
 - [Bag](data-structures/bag/)
 - [Hashes](data-structures/hashes/)
 - [Linked List](data-structures/linked-list/)
@@ -217,6 +218,7 @@ just a paper and pencil.
 - [Queue](data-structures/queue/)
 - [Stack](data-structures/stack/)
 - [Tree](data-structures/tree/)
+- [Graph](data-structures/graph/)
 
 ## [Divide and conquer](divide-and-conquer)
 
