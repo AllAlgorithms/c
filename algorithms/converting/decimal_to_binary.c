@@ -1,54 +1,41 @@
-//
-// Decimal to Binary
-// Converts decimal to binary.
-//
-// The All ▲lgorithms Project
-//
-// https://allalgorithms.com/
-// https://github.com/allalgorithms/cpp
-//
-// Contributed by: Hiyabye
-// Github: @Hiyabye
-//
-#include <stdio.h>
 
-int calculate_power(int base, int power)
-{
-  int i, result = 1;
-  for (i=0; i<power; i++)
-    result *= base;
-  return result;
-}
+// C++ implementation of the approach 
+#include <cmath.h> 
+#include <stdio.h>  
 
-void decimal_to_binary(int decimal)
-{
-  int i;
-  int digitCount = 1;
-  int temp = decimal;
-  while (temp >= 2)
-  {
-    temp /= 2;
-    digitCount++;
-  }
-  for (i=digitCount-1; i>=0; i--)
-  {
-    if (decimal >= calculate_power(2, i))
-    {
-      printf("1");
-      decimal -= calculate_power(2, i);
-    }
-    else
-      printf("0");
-  }
-}
+#define ull unsigned long long int 
 
-int main()
-{
-  int decimal;
-  printf("Enter a decimal number: ");
-  scanf("%d", &decimal);
-  printf("The binary for %d is ", decimal);
-  decimal_to_binary(decimal);
-  printf("\n");
-  return 0;
-}
+// Function to return the binary 
+// equivalent of decimal value N 
+int decimalToBinary(int N) 
+{ 
+
+	// To store the binary number 
+	ull B_Number = 0; 
+	int cnt = 0; 
+	while (N != 0) { 
+		int rem = N % 2; 
+		ull c = pow(10, cnt); 
+		B_Number += rem * c; 
+		N /= 2; 
+
+		// Count used to store exponent value 
+		cnt++; 
+	} 
+
+	return B_Number; 
+} 
+
+// Driver code 
+int main() 
+{ 
+  printf("ENTER THE DECIMLA NUMBER");
+  
+  int N;
+    scanf("%d",&N);
+  
+
+	printf("EQUIVALENT BINARY IS %d",decimalToBinary(N)); 
+
+	return 0; 
+} 
