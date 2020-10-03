@@ -1,4 +1,4 @@
-ABCD Pattern
+// ABCD Pattern
 //ABCDEEDCBA
 //ABCDDCBA
 //ABCCBA
