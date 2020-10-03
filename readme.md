@@ -1,3 +1,4 @@
+# All C Algorithms
 We are accepting all pull requests. [Read More](https://github.com/AllAlgorithms/algorithms/issues/40)
 
 <div align="center" id="top">
