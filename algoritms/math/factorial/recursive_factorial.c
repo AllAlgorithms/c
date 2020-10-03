@@ -5,18 +5,23 @@
  * Recursive Factorial Code 
  */
 #include <stdio.h>
+#include <stdlib.h>
 
-// Recursive function to calculate factorial of a number
-unsigned long factorial(int n)
+long factorial(int number)
 {
-	return (n < 1) ? 1 : n * factorial(n - 1);
+    if (number >= 1)
+        return (number * factorial(number - 1));
+    else
+        return 1;
 }
 
-// Program to calculate factorial of a number
-int main()
+int main(int argc, char const *argv[])
 {
-	int n = 6;
-	printf("The Factorial of %d is %lu", n, factorial(n));
+    int input_number;
+    printf("Enter a number to calculate its factorial\n");
+    scanf("%d", &input_number);
 
-	return 0;
+    printf("%d! = %ld\n", input_number, factorial(input_number));
+
+    return EXIT_SUCCESS;
 }
