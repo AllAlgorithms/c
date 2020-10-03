@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int largest(int arr[], int n) //add some comments
+int largest(int arr[], int n) //writing largest function 
 { 
     int max = arr[0]; 
     for (int i = 1; i < n; i++) 
@@ -9,7 +9,7 @@ int largest(int arr[], int n) //add some comments
     return max; 
 } 
 
-int LIS(int array[], int n)
+int LIS(int array[], int n)  // Adding LIS function
 {
         int lis[n];
         lis[0] = 0;
