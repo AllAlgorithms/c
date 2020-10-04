@@ -6,7 +6,11 @@ void Pascal(int n)
     int arr[n][n];  
       
     for (int i=0;i<n;i++) 
-    {
+    {   
+        //Adding spaces to make it look like a triangle..
+        for(int spaces = 0; spaces < (n-i); spaces++)
+            printf(" ");
+        
         for(int j=0;j<=i;j++) 
         { 
             if (i == j || j == 0) 
