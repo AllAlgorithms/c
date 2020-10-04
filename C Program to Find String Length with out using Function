@@ -1,0 +1,17 @@
+#include <string.h>
+#include <stdio.h>
+ 
+int main()
+{
+    int i,j,len=0;
+    char str[30];
+    clrscr();
+    printf("\n Enter a String to Find Length : " );
+    gets(str);
+    for(i=0; str[i]!='\0'; i++)
+    {
+        len++;
+    }
+    printf("\n String Length for %s is :%d ",str,len);
+    return 0;
+}
