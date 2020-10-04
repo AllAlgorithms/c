@@ -32,6 +32,7 @@ int main()
             break;
         }
     }
+return 0; 
 }
 
 double areabyside(double a, double b, double c)
