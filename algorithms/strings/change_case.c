@@ -2,7 +2,7 @@
 
 char chcase(char c){
   // This function changes a case of a character using ASCII table pattern
-  return c ^ 32;
+  return c + 32;
 }
 
 int main(void){
