@@ -3,6 +3,7 @@
 */
 
 #include <stdio.h>
+#include <string.h>
  
 int main()
 {
@@ -11,13 +12,9 @@ int main()
  
   gets(text);
  
-  while (text[length] != '\0')
-    length++;
+  end = strlen(text) - 1;
  
-  end = length - 1;
-  middle = length/2;
- 
-  for (begin = 0; begin < middle; begin++)
+  for (begin = 0; begin < end/2; begin++)
   {
     if (text[begin] != text[end])
     {
@@ -26,7 +23,7 @@ int main()
     }
     end--;
   }
-  if (begin == middle)
+  if (begin == end/2)
     printf("Palindrome.\n");
  
   return 0;
