@@ -21,39 +21,39 @@ struct sparse addMatrix(struct sparse a, struct sparse b) {
 			sum_mat.row[k] = a.row[i];
 			sum_mat.col[k] = a.col[i];
 			sum_mat.val[k] = a.val[i];
-			i++;
+			++i;
 		}
 		else if (a.row[i] > b.row[j] || (a.row[i] == b.row[j] && a.col[i] > b.col[j])) {
 			sum_mat.row[k] = b.row[j];
 			sum_mat.col[k] = b.col[j];
 			sum_mat.val[k] = b.val[j];
-			j++;
+			++j;
 		}
 		else {
 			sum_mat.row[k] = a.row[i];
 			sum_mat.col[k] = a.col[i];
 			sum_mat.val[k] = a.val[i] + b.val[j];
-			i++;
-			j++;
+			++i;
+			++j;
 		}
 
-		k++;
+		++k;
 	}
 
 	while (i < a.num_non_zero) {
 		sum_mat.row[k] = a.row[i];
 		sum_mat.col[k] = a.col[i];
 		sum_mat.val[k] = a.val[i];
-		i++;
-		k++;
+		++i;
+		++k;
 	}
 
 	while (j < b.num_non_zero) {
 		sum_mat.row[k] = b.row[j];
 		sum_mat.col[k] = b.col[j];
 		sum_mat.val[k] = b.val[j];
-		j++;
-		k++;
+		++j;
+		++k;
 	}
 
 	sum_mat.num_non_zero = k;
