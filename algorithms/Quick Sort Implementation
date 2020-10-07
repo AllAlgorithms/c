@@ -1,0 +1,83 @@
+//C program to implement Quick Sort and count the basic number of steps executed.
+//Author: Souvik Baruah
+
+
+#include <stdio.h> 
+int count[13]={0,0,0,0,0,0,0,0,0,0,0,0,0};
+
+int partition (int a[], int low, int high) 
+{ 
+    int pivot = a[high];  //Line 4
+    count[3]+=1;
+    int i = (low - 1);    //Line 5
+    count[4]+=1;
+  
+    for (int j = low; j <= high- 1; j++) 
+    { 
+        if (a[j] < pivot) 
+        { 
+            i++;                 //Line 6
+            count[5]+=1;
+            int temp=a[i];       //Line 7
+            count[6]+=1;
+            a[i]=a[j];           //Line 8
+            count[7]+=1;
+            a[j]=temp;           //Line 9
+            count[8]+=1;
+        } 
+    } 
+    int tmp=a[i+1];     //Line 10
+    count[9]+=1;
+    a[i+1]=a[high];     //Line 11
+    count[10]+=1;
+    a[high]=tmp;        //Line 12
+    count[11]+=1;
+    return (i + 1);     //Line 13
+    count[12]+=1;
+} 
+  
+void quickSort(int a[], int low, int high) 
+{ 
+    if (low < high) 
+    { 
+        int pi = partition(a, low, high); //Line 1
+        count[0]+=1;
+        quickSort(a, low, pi - 1);          //Line 2
+        count[1]+=1;
+        quickSort(a, pi + 1, high);         //Line 3
+        count[2]+=1;
+    } 
+} 
+  
+
+void display(int a[], int n) 
+{ 
+	int i; 
+    printf("The sorted array in ascending order is:\n");
+	for (i = 0; i < n; i++) 
+		printf("%d ", a[i]); 
+	printf("\n"); 
+    for(int i=0;i<13;i++)
+    {
+        printf("Line %d executed %d times\n",i+1,count[i]);
+    }
+} 
+
+int main() 
+{ 
+	int n,i;
+    int a[100]; 
+	printf("Enter the number of elements:\n");
+    scanf("%d",&n);
+    a[n];
+    printf("Enter the elements:\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+
+	quickSort(a,0,n-1); 
+	display(a, n); 
+
+	return 0; 
+} 
