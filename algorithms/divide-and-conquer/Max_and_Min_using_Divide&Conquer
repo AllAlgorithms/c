@@ -1,0 +1,49 @@
+#include<stdio.h>
+int divide(int[],int,int);
+int findmax(int,int);
+int findmin(int,int);
+int min;
+int main()
+{
+    int a[8] = {7,9,1,3,5,11,27,4};
+    int lb=0,ub=7,max;
+    max =  divide(a,lb,ub);
+   printf("\nMaximum element is : %d",max);
+
+  // printf("Maximum : %d\n",Maximum);
+   printf("\nMinimum : %d",min);
+   return 0;
+
+}
+int divide(int a[],int lb,int ub)
+{ if(lb<ub)
+   {
+    int mid = (lb+ub)/2;
+    int max1,max2,max,min;
+    max1 = divide(a,lb,mid);
+    max2 = divide(a,mid+1,ub);
+    max = findmax(max1,max2);
+    min = findmin(max1,max2);
+    return max;
+   }
+   if(lb == ub)
+    return (a[lb]);
+}
+
+int findmax(int x,int y)
+{
+ if(x>y)
+    return x;
+ else
+ return y;
+
+}
+int findmin(int x,int y)
+{
+ if(x<y)
+    return x;
+ else
+ return y;
+
+}
+
