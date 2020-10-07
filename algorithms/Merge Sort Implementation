@@ -1,0 +1,114 @@
+//C program to implement Merge Sort and count the basic number of steps executed.
+//Author: Souvik Baruah
+
+#include <stdio.h> 
+int count[21]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+
+void merge(int a[], int l, int m, int r) 
+{ 
+    int i, j, k, n1 = m - l + 1, n2 = r - m, L[n1], R[n2];      //Line 5
+    count[4]+=1;
+  
+    for (i = 0; i < n1; i++) 
+    {
+        L[i] = a[l + i];      //Line 6
+        count[5]+=1;
+    }    
+    for (j = 0; j < n2; j++)
+    { 
+        R[j] = a[m + 1 + j];  //Line 7
+        count[6]+=1;
+    } 
+    i = 0;            //Line 8
+    count[7]+=1;
+    j = 0;            //Line 9
+    count[8]+=1;
+    k = l;            //Line 10
+    count[9]+=1;
+    while (i < n1 && j < n2) 
+    { 
+        if (L[i] <= R[j]) 
+        { 
+            a[k] = L[i];   //Line 11
+            count[10]+=1;
+            i++;           //Line 12
+            count[11]+=1;
+        } 
+        else 
+        { 
+            a[k] = R[j];   //Line 13
+            count[12]+=1;
+            j++;           //Line 14
+            count[13]+=1;
+        } 
+        k++;    //Line 15 
+        count[14]+=1;
+    } 
+  
+    while (i < n1) 
+    { 
+        a[k] = L[i];   //Line 16
+        count[15]+=1;
+        i++;           //Line 17
+        count[16]+=1;
+        k++;           //Line 18
+        count[17]+=1;
+    } 
+
+    while (j < n2) 
+    { 
+        a[k] = R[j];   //Line 19
+        count[18]+=1;
+        j++;           //Line 20
+        count[19]+=1;
+        k++;           //Line 21
+        count[20]+=1;
+    } 
+} 
+  
+void mergeSort(int a[], int l, int r) 
+{ 
+    if (l < r)
+    { 
+        int m = l + (r - l) / 2;      //Line 1
+        count[0]+=1;
+        mergeSort(a, l, m);           //Line 2
+        count[1]+=1;
+        mergeSort(a, m + 1, r);       //Line 3
+        count[2]+=1;
+        merge(a, l, m, r);            //Line 4
+        count[3]+=1;
+    } 
+} 
+
+void display(int a[], int n) 
+{ 
+	int i; 
+    printf("The sorted array in ascending order is:\n");
+	for (i = 0; i < n; i++) 
+		printf("%d ", a[i]); 
+	printf("\n"); 
+    for(int i=0;i<21;i++)
+    {
+        printf("Line %d executed %d times\n",i+1,count[i]);
+    }
+} 
+
+int main() 
+{ 
+	int n,i;
+    int a[100]; 
+	printf("Enter the number of elements:\n");
+    scanf("%d",&n);
+    a[n];
+    printf("Enter the elements:\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+
+	mergeSort(a,0,n-1); 
+	display(a, n); 
+
+	return 0; 
+} 
