@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<limits.h>
+int Maximum(int a,int b,int c)
+{
+    if(a >= b && a>=c )
+        return a;
+    else if( b>=a && b>=c)
+        return b;
+    else
+        return c;
+}
+
+int crossSum(int a[],int l,int mid,int r)
+{
+    int i,sum = 0,lsum,rsum;
+
+  /*  if( l == mid)
+   return (a[l]+a[r]); */
+    sum =0;
+    lsum=INT_MIN;
+    rsum =INT_MIN;
+    for(i = mid ; i >=l;i--)
+    {
+        sum = sum + a[i];
+        if(sum > lsum)
+            lsum = sum;
+    }
+  // t4 = t3 = a[mid+1];
+  sum =0;
+    for(i=mid+1;i<=r;i++)
+    {
+        sum =sum + a[i];
+        if(sum > rsum )
+            rsum =sum;
+    }
+    return (Maximum(lsum+rsum,lsum,rsum));
+}
+int maxSumArray(int a[],int l,int r)
+{
+    if(l == r)
+        return a[l];
+    int mid = (l + r)/2;
+    int left,right,cross,max;
+    left = maxSumArray(a,l,mid);
+    right = maxSumArray(a,mid+1,r);
+    cross = crossSum(a,l,mid,r);
+    max = Maximum(left,right,cross);
+    return max;
+}
+int main()
+{
+int a[] = {-1,3,4,-5,9,-2};
+int n,maxSum;
+maxSum = maxSumArray(a,0,5);
+printf("Maximum subarray sum : %d ",maxSum);
+return 0;
+}
