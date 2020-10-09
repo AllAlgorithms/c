@@ -1,143 +1,171 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<math.h>
+#include<stdlib.h>     
+#include<ctype.h>    
 #include<string.h>
 
-int pop();
-int precedence(char symbol);
-int isEmpty();
-void infix_to_prefix();
-int checker(char symbol);
-void push(long int symbol);
+#define SIZE 100
 
-char prefix_string[20], infix_string[20], postfix_string[20];
-int top;
-long int stack[20];
+char stack[SIZE];
+int top = -1;
+
+void push(char item)
+{
+	if(top >= SIZE-1)
+	{
+		printf("\nStack Overflow.");
+	}
+	else
+	{
+		top++;
+		stack[top] = item;
+	}
+}
+
+char pop()
+{
+	char item ;
+
+	if(top <0)
+	{
+		printf("stack under flow: invalid infix expression");
+		getchar();
+		exit(1);
+	}
+	else
+	{
+		item = stack[top];
+		top = top-1;
+		return(item);
+	}
+}
+
+int is_operator(char symbol)
+{
+	if(symbol == '^' || symbol == '*' || symbol == '/' || symbol == '+' || symbol =='-')
+	{
+		return 1;
+	}
+	else
+	{
+	return 0;
+	}
+}
+
+/* define fucntion that is used to assign precendence to operator.
+* Here ^ denotes exponent operator.
+* In this fucntion we assume that higher integer value
+* means higher precendence */
+int precedence(char symbol)
+{
+	if(symbol == '^')/* exponent operator, highest precedence*/
+	{
+		return(3);
+	}
+	else if(symbol == '*' || symbol == '/')
+	{
+		return(2);
+	}
+	else if(symbol == '+' || symbol == '-')          /* lowest precedence */
+	{
+		return(1);
+	}
+	else
+	{
+		return(0);
+	}
+}
+
+void InfixToPostfix(char infix_exp[], char postfix_exp[])
+{ 
+	int i, j;
+	char item;
+	char x;
+
+	push('(');                               /* push '(' onto stack */
+	strcat(infix_exp,")");                  /* add ')' to infix expression */
+
+	i=0;
+	j=0;
+	item=infix_exp[i];         /* initialize before loop*/
+
+	while(item != '\0')        /* run loop till end of infix expression */
+	{
+		if(item == '(')
+		{
+			push(item);
+		}
+		else if( isdigit(item) || isalpha(item))
+		{
+			postfix_exp[j] = item;              /* add operand symbol to postfix expr */
+			j++;
+		}
+		else if(is_operator(item) == 1)        /* means symbol is operator */
+		{
+			x=pop();
+			while(is_operator(x) == 1 && precedence(x)>= precedence(item))
+			{
+				postfix_exp[j] = x;                  /* so pop all higher precendence operator and */
+				j++;
+				x = pop();                       /* add them to postfix expresion */
+			}
+			push(x);
+			/* because just above while loop will terminate we have
+			oppped one extra item
+			for which condition fails and loop terminates, so that one*/
+
+			push(item);                 /* push current oprerator symbol onto stack */
+		}
+		else if(item == ')')         /* if current symbol is ')' then */
+		{
+			x = pop();                   /* pop and keep popping until */
+			while(x != '(')                /* '(' encounterd */
+			{
+				postfix_exp[j] = x;
+				j++;
+				x = pop();
+			}
+		}
+		else
+		{ /* if current symbol is neither operand not '(' nor ')' and nor
+			operator */
+			printf("\nInvalid infix Expression.\n");        /* the it is illegeal  symbol */
+			getchar();
+			exit(1);
+		}
+		i++;
+
+
+		item = infix_exp[i]; /* go to next symbol of infix expression */
+	} /* while loop ends here */
+	if(top>0)
+	{
+		printf("\nInvalid infix Expression.\n");      
+		getchar();
+		exit(1);
+	}
+	if(top>0)
+	{
+		printf("\nInvalid infix Expression.\n");        
+		getchar();
+		exit(1);
+	}
+
+
+	postfix_exp[j] = '\0'; /* add sentinel else puts() fucntion */
+	/* will print entire postfix[] array upto SIZE */
+
+}
 
 int main()
 {
-int count, length;
-char temp;
-top = -1;
-printf(“\nEnter an Expression in Infix format:\t”);
-scanf(“%[^\n]s”, infix_string);
-infix_to_prefix();
-printf(“\nExpression in Postfix Format: \t%s\n”, postfix_string);
-length = strlen(postfix_string) – 1;
-strncpy(prefix_string, postfix_string, 20);
-for(count = 0; count < length; count++, length–)
-{
-temp = prefix_string[count];
-prefix_string[count] = prefix_string[length];
-prefix_string[length] = temp;
-}
-printf(“\nExpression in Prefix Format: \t%s\n”, prefix_string);
-return 0;
-}
+	char infix[SIZE], postfix[SIZE]; 
+	printf("ASSUMPTION: The infix expression contains single letter variables and single digit constants only.\n");
+	printf("\nEnter Infix expression : ");
+	gets(infix);
 
-void infix_to_prefix()
-{
-unsigned int count, temp = 0;
-char next;
-char symbol;
-for(count = 0; count < strlen(infix_string); count++)
-{
-symbol = infix_string[count];
-if(!checker(symbol))
-{
-switch(symbol)
-{
-case ‘(‘: push(symbol);
-break;
-case ‘)’:
-while((next = pop()) != ‘(‘)
-{
-postfix_string[temp++] = next;
-}
-break;
-case ‘+’:
-case ‘-‘:
-case ‘*’:
-case ‘/’:
-case ‘%’:
-case ‘^’:
-while(!isEmpty() && precedence(stack[top]) >= precedence(symbol))
-postfix_string[temp++] = pop();
-push(symbol);
-break;
-default:
-postfix_string[temp++] = symbol;
-}
-}
-}
-while(!isEmpty())
-{
-postfix_string[temp++] = pop();
-}
-postfix_string[temp] = ‘\0’;
-}
+	InfixToPostfix(infix,postfix);                 
+	printf("Postfix Expression: ");
+	puts(postfix);                     
 
-int precedence(char symbol)
-{
-switch(symbol)
-{
-case ‘(‘: return 0;
-case ‘+’:
-case ‘-‘:
-return 1;
-case ‘*’:
-case ‘/’:
-case ‘%’:
-return 2;
-case ‘^’:
-return 3;
-default:
-return 0;
-}
-}
-
-int checker(char symbol)
-{
-if(symbol == ‘\t’ || symbol == ‘ ‘)
-{
-return 1;
-}
-else
-{
-return 0;
-}
-}
-
-void push(long int symbol)
-{
-if(top > 20)
-{
-printf(“Stack Overflow\n”);
-exit(1);
-}
-top = top + 1;
-stack[top] = symbol;
-}
-
-int isEmpty()
-{
-if(top == -1)
-{
-return 1;
-}
-else
-{
-return 0;
-}
-}
-int pop()
-{
-if(isEmpty())
-
-{
-printf(“Stack is Empty\n”);
-exit(1);
-}
-return(stack[top--]);
-
+	return 0;
 }
