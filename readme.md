@@ -325,6 +325,7 @@ just a paper and pencil.
 - [Linear Search](searches)
 - [Ternay Search](searches)
 - [Jump Search](searches)
+- [Fibonacci Search](searches)
 
 ## [Selections Algorithms](selections-algorithms)
 
