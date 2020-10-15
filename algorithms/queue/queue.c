@@ -16,8 +16,7 @@ queue_init(const unsigned int max_size)
 	return NULL;
 }
 
-void
-queue_destroy(struct queue *queue, fn_node_data_destroy fn)
+void queue_destroy(struct queue *queue, fn_node_data_destroy fn)
 {
 	struct queue_node *node = queue->head;
 	struct queue_node **node_next = &node->next;
@@ -38,11 +37,10 @@ queue_node_init(void *data, fn_node_data_init fn)
 	struct queue_node *node = (struct queue_node *) malloc(sizeof(*node));
 	
 	if (node) {
-		if (fn != NULL) {
+		if (fn != NULL) 
 			node->data = fn();
-		} else {
+		 else 
 			node->data = data;
-		}
 		node->next = NULL;
 
 		return node;
