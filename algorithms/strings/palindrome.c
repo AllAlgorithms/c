@@ -2,32 +2,24 @@
    e.g. racecar
 */
 
-#include <stdio.h>
  
+#include <stdio.h>
+#include <string.h>
+
 int main()
 {
-  char text[100];
-  int begin, middle, end, length = 0;
- 
-  gets(text);
- 
-  while (text[length] != '\0')
-    length++;
- 
-  end = length - 1;
-  middle = length/2;
- 
-  for (begin = 0; begin < middle; begin++)
-  {
-    if (text[begin] != text[end])
-    {
-      printf("Not a palindrome.\n");
-      break;
-    }
-    end--;
-  }
-  if (begin == middle)
-    printf("Palindrome.\n");
- 
+  char a[100], b[100];
+
+  printf("Enter a string to check if it's a palindrome\n");
+  gets(a);
+
+  strcpy(b, a);  // Copying input string
+  strrev(b);  // Reversing the string
+
+  if (strcmp(a, b) == 0)  // Comparing input string with the reverse string
+    printf("The string is a palindrome.\n");
+  else
+    printf("The string isn't a palindrome.\n");
+
   return 0;
 }
