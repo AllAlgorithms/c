@@ -1,5 +1,6 @@
                     // make a chnage problem
 #include<stdio.h>
+#include<string.h>
 int min(int a, int b) { 
    if(a<b){   
    	return a;
