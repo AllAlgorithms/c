@@ -1,0 +1,34 @@
+#include<stdio.h>
+
+int main() {
+   int i,f,l,mid,n,a[10],num;
+   scanf("%d",&n);
+   for(i=0;i<n;i++)
+   {
+       scanf("%d",&a[i]);
+   }
+   scanf("%d",&num);
+   f=0;l=n-1;
+   mid=-1;
+   mid=(f+l)/2;
+while(f<=l)
+{
+if(a[mid]==num)
+{
+printf("%d",mid);
+break;
+}
+else if(a[mid]<num)
+{
+    f=mid+1;
+}
+else
+{
+    l=mid-1;
+}
+mid=(f+l)/2;
+}
+if(f>l)
+printf("the value not found");
+return 0;
+}
