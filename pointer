@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+   int num=10;  //Variable Declaration
+   int *p;   //Pointer Declaration
+   
+   p = #  //Assign address of num to the Pointer p
+   printf("Address of variable num is : %p",p);
+   return 0;
+}
