@@ -4,7 +4,7 @@
 #define FALSE 0
 
 /*
-Simple inplementation of a adjacency matrix graph
+Simple implementation of an adjacency matrix graph
 */
 
 typedef int bool;
