@@ -1,4 +1,4 @@
-We are accepting all pull requests. [Read More](https://github.com/AllAlgorithms/algorithms/issues/40)
+We are accepting all pull requests Thank you!. [Read More](https://github.com/AllAlgorithms/algorithms/issues/40)
 
 <div align="center" id="top">
 	<br>
@@ -412,7 +412,7 @@ To the extent possible under law, [Abraham Hernandez (@abranhe)](https://go.abra
 
 <div align="center">
 	<a href="https://github.com/abranhe/algorithms">
-		<img src="https://cdn.abranhe.com/projects/algorithms/logo.svg" width="50px">
+		<img src="https://cdn.abranhe.com/projects/algorithms/logo.svg" width="60px">
 	</a>
   <br>
 </div>
