@@ -7,6 +7,7 @@ char chcase(char c){
 
 int main(void){
 	char c;
+	printf("Enter any charecter: \n",c);
 	scanf("%c", &c);
 	printf("The opposite case of %c is %c\n", c,  chcase(c));
 	return 0;
