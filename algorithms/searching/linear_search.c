@@ -1,7 +1,8 @@
-#include <stdio.h>
- 
-int main()
+#include <stdio.h> //Header File
+#include <conio.h> //Header File
+int main() // Main Function Start
 {
+ 
   int array[100], search, c, n;
  
   printf("Enter the number of elements in array\n"); //Enter the number of array elements
@@ -24,7 +25,8 @@ int main()
     }
   }
   if (c == n)
-    printf("%d isn't present in the array.\n", search);
+    printf("%d isn't present in the array.\n", search);   // It reaches to End of the array 
  
   return 0;
+ 
 }
