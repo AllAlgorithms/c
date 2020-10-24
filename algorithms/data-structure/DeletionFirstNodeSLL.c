@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h>    // Header File of the Stdio
+#include <stdlib.h>   // Header File of the Conio
  
-struct node{
+struct node{          //Structure for the Data Representation
     int val;
     struct node *next;
 };
@@ -20,7 +20,7 @@ void delete_first_node(struct node **head) {
   *head = (*head)->next;
   
   /*Deleting the first node*/
-  free(tmp);
+  free(tmp);    // it Free the Memory from storage
 }
  
 /*Print the linked list*/
