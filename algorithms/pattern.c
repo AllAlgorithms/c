@@ -9,7 +9,9 @@
 int main()
 {
     int n;
+    printf("enter the number of character you want to make pattern of\n");
     scanf("%d",&n);
+    printf("Here is the pattern\n");
     for(int i=0;i<n;i++)
     {
         char ch='A';
