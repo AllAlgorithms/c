@@ -3,7 +3,7 @@
 int main(){
 
   char word[25];
-  int no_of_a = 0, no_of_e = 0, no_of_i = 0, no_of_o = 0, no_of_u = 0;
+  int no_of_a = 0, no_of_e = 0, no_of_i = 0, no_of_o = 0, no_of_u = 0,total=0;
   printf("Enter the word: ");
   gets(word);
 
@@ -37,7 +37,8 @@ int main(){
   printf("Number of 'i': %d\n", no_of_i);
   printf("Number of 'o': %d\n", no_of_o);
   printf("Number of 'u': %d\n", no_of_u);
-  printf("Total number of vowels: %d\n", no_of_a + no_of_e + no_of_i + no_of_o + no_of_u);
+  total= no_of_a + no_of_e + no_of_i + no_of_o + no_of_u
+  printf("Total number of vowels: %d\n",total);
 
 
   return 0;
