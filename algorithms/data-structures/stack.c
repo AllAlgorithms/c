@@ -6,19 +6,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "stack.h"
+#include "stack.h"   //User Defined Header File
 
 #define ds(s) printf("\nDEBUG--*"#s " : %s*\n", s);
 #define dc(c) printf("\nDEBUG--%"#c " : %c%\n", c);
 #define di(i) printf("\nDEBUG--#"#i " : %d#\n", i);
 
-Stack* newStack(int max_size) {
+Stack* newStack(int max_size) 
+{
     Stack* mystack = malloc(sizeof *mystack);
     init_stack(mystack, max_size);
     return mystack;
 }
 
-void init_stack(Stack* mystack, int max_size) {
+void init_stack(Stack* mystack, int max_size) //Stack Creation 
+{
     mystack -> top = -1;
     mystack -> data = NULL;
     mystack -> MAX = max_size;
@@ -46,13 +48,15 @@ void push(Stack* mystack, void* data) {
     }
 }
 
-void display(Stack* mystack) {
+void display(Stack* mystack)    //Display of Stack
+{
     for (int i = mystack -> top  ; i >= 0 ; i--) {
         printf("%s ", *(char**)(mystack->data + i));
     }
 }
 
-void* pop(Stack* mystack) {
+void* pop(Stack* mystack)                    //Deletion of the Stack
+{
     if (mystack -> top < 0) {
         printf("\n*Stack Underflow detected !*\n");
         return NULL;
