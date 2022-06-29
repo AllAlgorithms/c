@@ -1,19 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+// Demo on YouTube: https://www.youtube.com/watch?v=xWBP4lzkoyM
+
+/** Idea behind selection sort: 
+  * Find minimum in array
+  * Swap with the first
+ **/
+
 void SelectionSort(int A[], int size)
 {
     int i,j;
 	for(i=0; i<size-1; i++)
 	{
-		int Imin = i;
+		int Imin = i;                     // first element selected
 		for(j=i+1; j<size; j++)
 		{
 			if( A[j] < A[Imin] )
 			{
-				Imin = j;
+				Imin = j;           // minimum found
 			}
 		}
-		int temp = A[Imin];
+		int temp = A[Imin];                 // swapped with first element
 		A[Imin] = A[i];
 		A[i] = temp;
 	}
