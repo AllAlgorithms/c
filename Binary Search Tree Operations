@@ -1,0 +1,261 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+ struct node
+ {
+     int data;
+     struct node *left, *right;
+ };
+ struct node *root=NULL,*temp=NULL,*t1,*t2;
+int flag=1;
+ void search(struct node *t)
+ {
+     if((temp->data > t->data) && (t->right!=NULL))
+        search(t->right);
+     else if((temp->data > t->data) && (t->right==NULL))
+        t->right=temp;
+     else if((temp->data < t->data) && (t->left != NULL))
+        search(t->left);
+     else if((temp->data < t->data) && (t->left == NULL))
+        t->left=temp;
+ }
+
+ void insertion()
+ {
+     int item;
+     printf("Enter the element to be inserted:");
+     scanf("%d",&item);
+     temp=(struct node*)malloc(sizeof(struct node));
+     temp->data=item;
+     temp->left=NULL;
+     temp->right=NULL;
+
+     if(root==NULL)
+        root=temp;
+     else
+        search(root);
+ }
+
+void inorder(struct node *t)
+{
+    if(root == NULL)
+    {
+        printf("Tree is empty.");
+        return;
+    }
+    else
+    {
+        if(t->left!=NULL)
+            inorder(t->left);
+        printf("%d -> ",t->data);
+        if(t->right != NULL)
+            inorder(t->right);
+    }
+
+}
+
+void preorder(struct node *t)
+{
+    if(root == NULL)
+    {
+        printf("Tree is empty.");
+        return;
+    }
+    else
+    {
+        printf("%d -> ",t->data);
+        if(t->left != NULL)
+            preorder(t->left);
+        if(t->right != NULL)
+            preorder(t->right);
+    }
+}
+
+void postorder(struct node *t)
+{
+    if(root == NULL)
+    {
+        printf("Tree is empty.");
+        return;
+    }
+    else
+    {
+        if(t->left != NULL)
+            preorder(t->left);
+        if(t->right != NULL)
+            preorder(t->right);
+        printf("%d -> ",t->data);
+    }
+}
+
+void deletion()
+{
+    int item;
+    if (root == NULL)
+    {
+        printf("Tree is empty.");
+        return;
+    }
+    printf("Enter the element to be deleted : ");
+    scanf("%d", &item);
+    t1 = root;
+    t2 = root;
+    search1(root, item);
+}
+
+void search1(struct node *t, int item)
+{
+    if ((item > t->data))
+    {
+        t1 = t;
+        search1(t->right, item);
+    }
+    else if ((item < t->data))
+    {
+        t1 = t;
+        search1(t->left, item);
+    }
+    else if ((item==t->data))
+    {
+        delete1(t);
+    }
+}
+
+void delete1(struct node *t)
+{
+    int k;
+
+    // To delete leaf node
+    if ((t->left == NULL) && (t->right == NULL))
+    {
+        if (t1->left == t)
+        {
+            t1->left = NULL;
+        }
+        else
+        {
+            t1->right = NULL;
+        }
+        t = NULL;
+        free(t);
+        return;
+    }
+
+    // To delete node having one left hand child
+    else if ((t->right == NULL))
+    {
+        if (t1 == t)
+        {
+            root = t->left;
+            t1 = root;
+        }
+        else if (t1->left == t)
+        {
+            t1->left = t->left;
+
+        }
+        else
+        {
+            t1->right = t->left;
+        }
+        t = NULL;
+        free(t);
+        return;
+    }
+
+    // To delete node having one right hand child
+    else if (t->left == NULL)
+    {
+        if (t1 == t)
+        {
+            root = t->right;
+            t1 = root;
+        }
+        else if (t1->right == t)
+            t1->right = t->right;
+        else
+            t1->left = t->right;
+        t == NULL;
+        free(t);
+        return;
+    }
+
+    // To delete node having two child
+    else if ((t->left != NULL) && (t->right != NULL))
+    {
+        t2 = root;
+        if (t->right != NULL)
+        {
+            k = smallest(t->right);
+            flag = 1;
+        }
+        else
+        {
+            k =largest(t->left);
+            flag = 2;
+        }
+        search1(root, k);
+        t->data = k;
+    }
+}
+
+int smallest(struct node *t)
+{
+    t2 = t;
+    if (t->left != NULL)
+    {
+        t2 = t;
+        return(smallest(t->left));
+    }
+    else
+        return (t->data);
+}
+
+int largest(struct node *t)
+{
+    if (t->right != NULL)
+    {
+        t2 = t;
+        return(largest(t->right));
+    }
+    else
+        return(t->data);
+}
+
+ void main()
+ {
+     printf("OPERATIONS\n");
+     printf("1.Insertion to Tree\n");
+     printf("2.Inorder Traversal\n");
+     printf("3.Preorder Traversal\n");
+     printf("4.Postorder Traversal\n");
+     printf("5.Deletion from Tree\n");
+     printf("6.Exit\n");
+     while(1)
+     {
+         int ch,i;
+         printf("\nEnter your choice:");
+         scanf("%d",&ch);
+
+         switch(ch)
+         {
+             case 1:insertion();
+                    break;
+             case 2:inorder(root);
+                    printf("NULL");
+                    break;
+             case 3:preorder(root);
+                    printf("NULL");
+                    break;
+             case 4:postorder(root);
+                    printf("NULL");
+                    break;
+             case 5:deletion();
+                    break;
+             case 6:exit(0);
+                    break;
+            default:printf("Invalid choice");
+                    break;
+         }
+     }
+ }
