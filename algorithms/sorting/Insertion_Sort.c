@@ -1,16 +1,18 @@
 
+
 #include <stdio.h>
 
-void bubble_sort(int array[],int len){
-    int i,j,temp;
-    for(i=0; i<len-1;i++){
-        for(j=0;j<len-i-1;j++){
-            if(array[j]>array[j+1]){
-                temp=array[j];
-                array[j]=array[j+1];
-                array[j+1]=temp;
-            }
+void insertion_sort(int array[],int l){
+    int i,j,key;
+    for(i=1;i<l;i++){
+        key=array[i];
+        j=i-1;
+        while(j>=0 && array[j]>key){
+            array[j+1]=array[j];
+            j=j-1;
         }
+        array[j+1]=key;
+
     }
 }
 
@@ -24,7 +26,7 @@ void main(){
         scanf("%d",&array[i]);
     }
 
-    bubble_sort(array,l);
+    insertion_sort(array,l);
     printf("The Sorted Array is: ");
     for(i=0;i<l;i++){
         printf("%d ",array[i]);
