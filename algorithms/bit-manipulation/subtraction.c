@@ -15,6 +15,4 @@ int main()
 {
 	printf("diff of %d and %d is %d\n", 4, 3, subtract(4, 3));
 	return 0;
-
-
-
+}
