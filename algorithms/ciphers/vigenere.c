@@ -1,5 +1,5 @@
 //implementation of vigenere cipher alogrithm. this code can encrypt and decrypt texts using a key. 
-//
+//written by Antoine PASCAL, github username Axetriks, 14th of october, 2022
 
 
 
