@@ -17,12 +17,12 @@ void age(int present_date, int present_month, int present_year, int birth_date, 
    printf("Present Age Years: %d Months: %d Days: %d", final_year, final_month, final_date);
 }
 int main() {
-   int present_date = 21;
-   int present_month = 9;
-   int present_year = 2019;
-   int birth_date = 25;
-   int birth_month = 9;
-   int birth_year = 1996;
+   int present_date = 12;
+   int present_month = 3;
+   int present_year = 2023;
+   int birth_date = 13;
+   int birth_month = 12;
+   int birth_year = 2023;
    age(present_date, present_month, present_year, birth_date, birth_month, birth_year);
    return 0;
 }
