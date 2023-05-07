@@ -1,55 +1,71 @@
-﻿#include <stdio.h>
- 
-void main()
-{
-    int heap[10], no, i, j, c, root, temp;
- 
-    printf("\n Enter no of elements :");
-    scanf("%d", &no);
-    printf("\n Enter the nos : ");
-    for (i = 0; i < no; i++)
-       scanf("%d", &heap[i]);
-    for (i = 1; i < no; i++)
-    {
-        c = i;
-        do
-        {
-            root = (c - 1) / 2;             
-            if (heap[root] < heap[c])   /* to create MAX heap array */
-            {
-                temp = heap[root];
-                heap[root] = heap[c];
-                heap[c] = temp;
-            }
-            c = root;
-        } while (c != 0);
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_HEAP_SIZE 100
+
+void swap(int *a, int *b);
+void heapify(int *heap, int size, int i);
+void build_heap(int *heap, int size);
+void heapsort(int *heap, int size);
+
+int main() {
+    int heap[MAX_HEAP_SIZE], size;
+
+    printf("Enter the number of elements (max %d): ", MAX_HEAP_SIZE);
+    scanf("%d", &size);
+
+    printf("Enter the elements: ");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &heap[i]);
     }
- 
-    printf("Heap array : ");
-    for (i = 0; i < no; i++)
-        printf("%d\t ", heap[i]);
-    for (j = no - 1; j >= 0; j--)
-    {
-        temp = heap[0];
-        heap[0] = heap[j];   /* swap max element with rightmost leaf element */
-        heap[j] = temp;
-        root = 0;
-        do 
-        {
-            c = 2 * root + 1;    /* left node of root element */
-            if ((heap[c] < heap[c + 1]) && c < j-1)
-                c++;
-            if (heap[root]<heap[c] && c<j)    /* again rearrange to max heap array */
-            {
-                temp = heap[root];
-                heap[root] = heap[c];
-                heap[c] = temp;
-            }
-            root = c;
-        } while (c < j);
-    } 
-    printf("\n The sorted array is : ");
-    for (i = 0; i < no; i++)
-       printf("\t %d", heap[i]);
-    printf("\n Complexity : \n Best case = Avg case = Worst case = O(n logn) \n");
+
+    heapsort(heap, size);
+
+    printf("The sorted array is: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", heap[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void heapify(int *heap, int size, int i) {
+    int largest = i; // Initialize largest as root
+    int l = 2 * i + 1; // left child index
+    int r = 2 * i + 2; // right child index
+
+    if (l < size && heap[l] > heap[largest]) {
+        largest = l;
+    }
+
+    if (r < size && heap[r] > heap[largest]) {
+        largest = r;
+    }
+
+    if (largest != i) {
+        swap(&heap[i], &heap[largest]);
+        heapify(heap, size, largest);
+    }
+}
+
+void build_heap(int *heap, int size) {
+    for (int i = size / 2 - 1; i >= 0; i--) {
+        heapify(heap, size, i);
+    }
+}
+
+void heapsort(int *heap, int size) {
+    build_heap(heap, size);
+
+    for (int i = size - 1; i > 0; i--) {
+        swap(&heap[0], &heap[i]);
+        heapify(heap, i, 0);
+    }
 }
