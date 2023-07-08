@@ -13,7 +13,7 @@ void union_sets(int arr[],int u,int v){
     if(u!=v)
         arr[v] = u;
 }
-int main(){
+void main(){
     int n,arr[99999],q,u,v;
     memset(arr,-1,99999*sizeof(int));
     printf("Enter the total element := ");
